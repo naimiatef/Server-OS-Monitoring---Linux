@@ -235,10 +235,50 @@ Tableau des statistiques des périphériques : Ce tableau affiche les statistiqu
 - Le %iowait est bas (0.55 %), ce qui indique que le CPU n'attend pas excessivement les opérations d'E/S. Cela suggère que les performances du disque ne sont pas un goulot d'étranglement majeur dans cette situation.
 - En résumé : iostat fournit une vue détaillée de l'activité d'E/S du système. Dans cette sortie, on observe une utilisation modérée du CPU et une activité significative sur les disques sda et dm-0, sans signe de saturation des E/S.
 
-**Pour obtenir une analyse plus approfondie, il serait utile de voir les statistiques sur une période plus longue ou pendant une charge de travail spécifique. Vous pouvez exécuter iostat -x 1 pour afficher des statistiques détaillées toutes les secondes.**
+**Pour obtenir une analyse plus approfondie, il serait utile de voir les statistiques sur une période plus longue ou pendant une charge de travail spécifique. Vous pouvez exécuter iostat -x 1 pour afficher des statistiques détaillées toutes les secondes.** <br>
 
+# La commande **iotop**
+iotop est un outil de surveillance en temps réel des processus qui consomment des ressources d'entrée/sortie (I/O) sur un système Linux. Il est particulièrement utile pour identifier les processus qui génèrent une charge élevée d'entrée/sortie disque, ce qui peut être un goulot d'étranglement dans les performances système.
 
+Fonctionnalité de iotop :
+Affiche les processus en cours d'exécution qui consomment le plus de ressources I/O.
+Surveille l'activité I/O en temps réel, y compris la lecture et l'écriture sur les disques.
+Affiche les taux de transfert I/O en temps réel pour chaque processus.
+Permet d’identifier rapidement les processus gourmands en I/O, ce qui est utile pour diagnostiquer des problèmes de performance du système.
+**Sortie de iotop :**
+La sortie de iotop présente plusieurs colonnes, dont :
 
+**- PID :** L'ID du processus.
+**- USER :** Le nom de l'utilisateur exécutant le processus.
+**- DISK READ :** Le nombre de kilooctets lus depuis le disque par seconde.
+**- DISK WRITE :** Le nombre de kilooctets écrits sur le disque par seconde.
+**- SWAPIN :** Le taux auquel un processus lit depuis l'échange (swap).
+**- IO :** Le taux total d'entrée/sortie (lecture + écriture).
+**- COMMAND :** Le nom du processus ou de la commande en cours d'exécution.
+### Exemple de sortie de iotop :
+```bash
+Total DISK READ: 0.00 B/s | Total DISK WRITE: 5.56 K/s
+TID    PRIO  USER     DISK READ  DISK WRITE  SWAPIN   IO>     COMMAND
+1234   be/4  root     0.00 B/s   0.00 B/s    0.00 %   0.00 %  some_process
+5678   be/4  user1    0.00 B/s   5.56 K/s    0.00 %   0.05 %  another_process
+9101   be/4  user2    0.00 B/s   0.00 B/s    0.00 %   0.00 %  third_process
+```
+**Colonnes de la sortie :**
+- **TID :** L'ID du thread.
+- **PRIO :** La priorité du processus (par exemple, "be/4" signifie une priorité en mode d'exécution normal).
+- **USER :** L'utilisateur exécutant le processus.
+- **DISK READ/WRITE :** Le débit de lecture et d'écriture des disques pour chaque processus.
+- **SWAPIN :** Pourcentage de temps passé à lire depuis le swap.
+- **IO> :** Indicateur de l'activité I/O du processus.
+- **COMMAND :** Le nom du processus. <br>
+Options courantes :
+- **iotop -o :** Affiche uniquement les processus qui génèrent de l'I/O (c'est-à-dire ceux qui ont une activité d'entrée/sortie).
+- **iotop -b :** Exécute iotop en mode batch, ce qui est utile pour rediriger la sortie vers un fichier ou pour surveiller l'I/O sur une période prolongée.
+- **iotop -n :** Limite le nombre de mises à jour à effectuer (par exemple, iotop -n 5 pour afficher les 5 premières mises à jour et quitter).
+**Prérequis :** <br>
+iotop nécessite que le noyau supporte la fonctionnalité TASK_IO_ACCOUNTING, qui doit être activée. Cela signifie que iotop fonctionne mieux sur des distributions avec un noyau moderne et configuré correctement.
+
+Il peut ne pas être installé par défaut. Vous pouvez l'installer sur la plupart des distributions Linux
 
 
 
