@@ -16,10 +16,17 @@ Cette image montre l'affichage de la commande top dans un terminal Linux, qui se
 - **users** : Nombre d'utilisateurs connectés à la machine.<br>
 - **load average**: 0.05, 0.57, 0.47 : Moyenne de la charge système sur 1, 5 et 15 minutes. Ces valeurs indiquent le nombre moyen de processus en attente d'exécution.<br>
 ### Informations sur les tâches (Tasks) : <br>
-- 209 total : Nombre total de tâches ou processus.
-- 1 running : Nombre de processus en cours d'exécution.
-- 208 sleeping : Nombre de processus en veille.
-- 0 stopped : Aucun processus arrêté manuellement.
-- 0 zombie : Aucun processus zombie (processus terminé mais toujours en mémoire).
+- **209 total** : Nombre total de tâches ou processus.
+- **1 running **: Nombre de processus en cours d'exécution.
+- **208 sleeping** : Nombre de processus en veille.
+- **0 stopped** : Aucun processus arrêté manuellement.
+- **0 zombie** : Aucun processus zombie (processus terminé mais toujours en mémoire).
+### Informations sur l'utilisation du CPU :
+- **%Cpu(s):** Indique la répartition de l'utilisation du CPU :
+- **6.2 us :** Temps passé par les processus utilisateur (user).
+- **6.2 sy :** Temps passé par les processus système (kernel).
+- **87.5 id : **Temps d'inactivité (idle).
+Les autres valeurs concernent des tâches spécifiques comme l'attente d'entrée/sortie (wa), ou les interruptions matérielles (hi) et logicielles (si).
+
 
 
