@@ -9,4 +9,11 @@ La commande **top** sous Unix est un outil interactif qui permet de surveiller e
 - Les utilisateurs et la priorité des processus.
 - C'est un outil essentiel pour analyser les performances et identifier les processus qui consomment le plus de ressources.
 ![image](https://github.com/user-attachments/assets/72c4d053-6fad-46ac-984f-2bbef7ab3267)
+Cette image montre l'affichage de la commande top dans un terminal Linux, qui sert à surveiller en temps réel les performances et les processus d'une machine Unix.
+En-tête générale :
+1- top - 14:47:38 : Heure actuelle.
+2- up 9 min : Durée de fonctionnement du système depuis le dernier démarrage (ici, 9 minutes).
+3- users : Nombre d'utilisateurs connectés à la machine.
+load average: 0.05, 0.57, 0.47 : Moyenne de la charge système sur 1, 5 et 15 minutes. Ces valeurs indiquent le nombre moyen de processus en attente d'exécution.
+
 
