@@ -99,5 +99,22 @@ Cette commande permet donc d'identifier rapidement les processus qui utilisent l
 - **in et cs :** nombre d'interruptions et de commutateurs de contexte.
 - **us, sy, id, wa :** utilisation du processeur en mode utilisateur, système, inactif et en attente d'I/O.
 
+# La commande **vmstat -a** 
+La commande vmstat -a affiche des informations supplémentaires par rapport à la commande vmstat standard, spécifiquement sur l'allocation de la mémoire et les pages de mémoire partagée. Voici un résumé des colonnes que vous pouvez obtenir avec vmstat -a :
+
+- **pages :** Indique des informations supplémentaires sur les pages mémoire.
+- **active :** Nombre de pages actives en mémoire.
+- **inactive :** Nombre de pages inactives en mémoire.
+- **wired :** Nombre de pages "filtrées" en mémoire, c'est-à-dire qui ne peuvent pas être échangées sur le disque (en raison de leur utilisation par le noyau, par exemple).
+- **free :** Nombre de pages libres en mémoire.
+- **dirty :** Nombre de pages qui ont été modifiées mais pas encore écrites sur le disque.
+- **clean :** Pages propres qui ne nécessitent pas d'écriture sur le disque.
+- **cache :** Pages mises en cache par le système.
+- **swapped :** Nombre de pages qui ont été échangées sur le disque.
+Voici un exemple de sortie avec vmstat -a :
+![image](https://github.com/user-attachments/assets/cebfad39-1913-43e6-be6b-b76067360633)
+
+
+
 
 
