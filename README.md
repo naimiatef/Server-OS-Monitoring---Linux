@@ -60,6 +60,44 @@ La commande top -o +%CPU est utilisée pour trier les processus affichés dans t
 Détail des options : <br>
 - **-o :** Cette option permet de spécifier une colonne selon laquelle trier les processus.
 - **+%CPU :** Indique que les processus doivent être triés par la colonne %CPU (utilisation du CPU), dans un ordre décroissant (du processus consommant le plus de CPU vers le moins). <br>
-![image](https://github.com/user-attachments/assets/55556f5a-425c-4f3f-82f0-bc86a8de1c85)
+![image](https://github.com/user-attachments/assets/ade2d66d-4c0b-437c-b36e-f262cd6d4b13) <br>
+- Tri par la colonne %CPU :
+- Les processus sont affichés en fonction de leur consommation CPU, du plus élevé au plus faible.
+- Ici, le processus gnome-shell (PID 2391) consomme 6.7% du CPU, ce qui en fait le plus gourmand à l'instant.
+- **Colonne %CPU (surlignée) :**
+Montre le pourcentage du temps CPU utilisé par chaque processus par rapport à la capacité totale.
+Autres détails pertinents :
+
+- **Le processus systemd (PID 1),** qui gère les services système, consomme très peu de CPU (0.0%).
+La plupart des processus (comme kthreadd, rcu_gp, etc.) sont inactifs, avec une utilisation CPU de 0.0%.
+# La commande **top -o +%MEM** 
+- La commande top -o +%MEM est utilisée sur les systèmes basés sur Linux pour afficher l'outil de surveillance des processus top, trié par utilisation de la mémoire en ordre décroissant. Voici l'explication de cette commande :
+- **top :** Lance l'outil de surveillance du système qui affiche en temps réel des informations sur les processus du système, l'utilisation du processeur, de la mémoire et d'autres ressources.
+- **-o +%MEM :** Trie la sortie par utilisation de la mémoire, avec les processus qui consomment le plus de mémoire en haut de la liste.
+Cette commande permet donc d'identifier rapidement les processus qui utilisent le plus de mémoire sur votre système.
+![image](https://github.com/user-attachments/assets/d6fb30d4-2a6a-40ba-9a09-dbc06360d3b8)
+
+# La commande **top -o +%MEM** 
+- La commande vmstat (pour "virtual memory statistics") est un outil utilisé sur les systèmes Unix et Linux pour surveiller les ressources système, en particulier la mémoire virtuelle, l'utilisation du processeur, les processus, l'échange de mémoire (swap), et d'autres paramètres liés aux performances du système.
+
+- En exécutant vmstat, vous obtenez des informations sur l'état actuel de votre système, comme :
+
+- **Processeurs (us, sy, id, wa) :** l'utilisation du processeur par l'utilisateur, le système, l'inactivité, et l'attente d'entrées/sorties.
+- **Mémoire (free, buff, cache) :** la mémoire libre, les tampons et le cache.
+- **Swap (si, so) :** l'échange de mémoire, montrant les pages qui sont lues ou écrites sur le disque swap.
+- **Système (in, cs) :** les interruptions et les commutateurs de contexte (changement de processus).
+- **I/O (bi, bo) :** l'entrée/sortie pour les blocs (lecture et écriture).
+![image](https://github.com/user-attachments/assets/0c1b216b-b1e2-409d-a087-c8c185b9fcf2)
+- Dans cet exemple :
+- **r :** nombre de processus en cours d'exécution.
+- **b :** nombre de processus en mode "attente" (en attente d'une ressource).
+- **swpd :** quantité de mémoire utilisée par le swap
+- **free :** quantité de mémoire libre.
+- **buff et cache :** mémoire utilisée pour les tampons et le cache.
+- **si et so :** pages échangées depuis/vers le disque swap.
+- **bi et bo :** nombre de blocs lus/écrits sur le disque.
+- **in et cs :** nombre d'interruptions et de commutateurs de contexte.
+- **us, sy, id, wa :** utilisation du processeur en mode utilisateur, système, inactif et en attente d'I/O.
+
 
 
