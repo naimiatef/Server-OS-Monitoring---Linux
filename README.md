@@ -1,6 +1,7 @@
 # Dans ce tutoriel, nous allons explorer et pratiquer des commandes Unix avancées pour surveiller une machine Unix.
 
 ### N'hésitez pas à nous contacter en cas de doute: naimiatef@gmail.com
+# La commande **top** 
 La commande **top** sous Unix est un outil interactif qui permet de surveiller en temps réel les processus en cours d'exécution sur une machine. Elle affiche des informations clés telles que :
 
 - L'utilisation du CPU.
@@ -54,5 +55,11 @@ Chaque ligne correspond à un processus en cours d'exécution ou en veille. Les 
 - **%MEM :** Pourcentage d'utilisation de la RAM.
 - **TIME+ :** Temps total CPU consommé par le processus.
 - **COMMAND :** Nom ou commande associée au processus.
+# La commande **top -o +%CPU** 
+La commande top -o +%CPU est utilisée pour trier les processus affichés dans top par ordre décroissant d'utilisation du CPU. <br>
+Détail des options : <br>
+- **-o :** Cette option permet de spécifier une colonne selon laquelle trier les processus.
+- **+%CPU :** Indique que les processus doivent être triés par la colonne %CPU (utilisation du CPU), dans un ordre décroissant (du processus consommant le plus de CPU vers le moins). <br>
+![image](https://github.com/user-attachments/assets/55556f5a-425c-4f3f-82f0-bc86a8de1c85)
 
 
