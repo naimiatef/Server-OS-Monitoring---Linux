@@ -114,6 +114,63 @@ La commande vmstat -a affiche des informations supplémentaires par rapport à l
 Voici un exemple de sortie avec vmstat -a :
 ![image](https://github.com/user-attachments/assets/cebfad39-1913-43e6-be6b-b76067360633)
 
+# La commande **vmstat -s** 
+- La commande vmstat -S permet de spécifier l'unité de mesure utilisée pour afficher les valeurs de certaines statistiques de mémoire et d'entrée/sortie dans la sortie de vmstat. Par défaut, vmstat affiche les résultats en kilobytes (Ko), mais avec l'option -S, vous pouvez modifier l'unité de mesure.
+
+- Voici les unités disponibles avec -S :
+
+- **m :** Mégaoctets (MB)
+- **g :** Gigaoctets (GB)
+- **k :** Kilooctets (KB) (valeur par défaut)
+- **t :** Téraoctets (TB)
+- **p :** Pétaoctets (PB)
+- **e :** Exaoctets (EB)
+- **z :** Zettaoctets (ZB)
+- **y :** Yottaoctets (YB)
+Exemple d'utilisation de la commande :
+- **vmstat -S m** : Affiche les résultats en mégaoctets.
+- **vmstat -S g** : Affiche les résultats en gigaoctets.
+- **vmstat -S k** : Affiche les résultats en kilooctets (valeur par défaut).
+Exemple de sortie avec vmstat -S m :
+![image](https://github.com/user-attachments/assets/5449d82e-f112-4e27-a52f-f5029a611a28)
+
+- **3028 K buffer memory:** Quantité de mémoire utilisée pour la mise en tampon des entrées/sorties disque. Cette mémoire sert à stocker temporairement les données en transit entre la mémoire vive et le disque dur, améliorant ainsi les performances.
+
+- **2118772 K swap cache:** Quantité de mémoire utilisée pour la mise en cache des pages de swap (mémoire virtuelle). Lorsque des données sont déplacées de la RAM vers le swap, une copie peut être conservée dans le swap cache pour un accès plus rapide si elles sont à nouveau nécessaires.
+
+- **4153340 K total swap:** Taille totale de l'espace de swap disponible sur le système. Le swap est une partition du disque dur utilisée comme extension de la mémoire vive.
+
+- **47904 K used swap:** Quantité d'espace de swap actuellement utilisée. Si cette valeur est élevée, cela indique que le système manque de mémoire vive et utilise activement le swap, ce qui peut ralentir les performances.
+
+- **4105436 K free swap:** Quantité d'espace de swap disponible et non utilisé.
+
+Les lignes suivantes (commençant par des nombres suivis de "non-nice user cpu ticks", "nice user cpu ticks", etc.) : Ces lignes fournissent des statistiques détaillées sur l'utilisation du CPU. "Ticks" est une unité de mesure du temps CPU.
+
+- **11532 non-nice user cpu ticks:** Temps CPU utilisé par les processus utilisateur avec une priorité normale.
+- **491 nice user cpu ticks:** Temps CPU utilisé par les processus utilisateur avec une priorité "nice" (plus basse). Les processus "nice" cèdent la priorité aux autres processus.
+- **3477 system cpu ticks:** Temps CPU utilisé par le noyau du système d'exploitation pour exécuter des tâches système.
+- **122357 idle cpu ticks:** Temps CPU pendant lequel le processeur était inactif.
+- **819 io-wait cpu ticks:** Temps CPU pendant lequel le processeur était en attente d'opérations d'entrée/sortie (E/S), typiquement des accès disque. Une valeur élevée peut indiquer des problèmes de performance liés au disque.
+- **1613 IRQ cpu ticks:** Temps CPU utilisé pour gérer les interruptions matérielles (IRQ).
+- **964 softirq cpu ticks:** Temps CPU utilisé pour gérer les interruptions logicielles (softirq).
+- **0 stolen cpu ticks:** Temps CPU "volé" par d'autres machines virtuelles dans un environnement virtualisé. Si cette valeur est supérieure à zéro, cela signifie que votre machine virtuelle n'a pas accès à la totalité des ressources CPU allouées.
+- **2623645 pages paged in:** Nombre de pages de mémoire chargées depuis le disque vers la RAM.
+
+- **1124719 pages paged out:** Nombre de pages de mémoire écrites depuis la RAM vers le disque (swap). Un nombre élevé de pages "paged out" indique une forte utilisation du swap.
+
+- **888 pages swapped in:** Nombre de pages chargées depuis le swap vers la RAM.
+
+- **12290 pages swapped out:** Nombre de pages écrites depuis la RAM vers le swap.
+
+- **714279 interrupts:** Nombre total d'interruptions matérielles gérées par le système.
+
+- **989882 CPU context switches:** Nombre de changements de contexte CPU. Un changement de contexte se produit lorsque le CPU passe d'un processus à un autre. Un nombre élevé de changements de contexte peut indiquer une charge importante sur le système.
+
+- **1720118318 boot time:** Heure de démarrage du système, exprimée en secondes depuis l'Epoch Unix (1er janvier 1970).
+
+- **5538 forks:** Nombre de processus créés (forkés) depuis le démarrage du système.
+
+
 
 
 
