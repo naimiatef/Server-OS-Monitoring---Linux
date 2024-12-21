@@ -170,6 +170,74 @@ Les lignes suivantes (commençant par des nombres suivis de "non-nice user cpu t
 
 - **5538 forks:** Nombre de processus créés (forkés) depuis le démarrage du système.
 
+# La commande **iostat**
+La commande iostat (pour Input/Output Statistics) est un outil utilisé sur les systèmes Unix et Linux pour surveiller les performances des périphériques de stockage (disques, partitions) et l'utilisation du processeur. Elle fournit des informations sur les statistiques d'entrée/sortie (I/O) et les temps de réponse des disques ainsi que sur la charge du processeur.
+
+Informations fournies par iostat :
+### Utilisation du processeur :
+
+- **%user :** Pourcentage du temps CPU passé à exécuter des processus en mode utilisateur.
+- **%system :** Pourcentage du temps CPU passé à exécuter des processus en mode noyau.
+- **%idle :** Pourcentage du temps CPU en mode inactif.
+- **%iowait :** Pourcentage du temps CPU en attente de données d'entrée/sortie.
+- **Statistiques I/O des disques :** Pour chaque disque ou partition, iostat affiche des statistiques sur les opérations d'entrée/sortie, comme :
+
+- **tps :** Nombre de transactions par seconde.
+- **kB_read/s :** Nombre de kilooctets lus par seconde.
+- **kB_wrtn/s :** Nombre de kilooctets écrits par seconde.
+- **kB_read :** Total des kilooctets lus.
+- **kB_wrtn :** Total des kilooctets écrits.
+- **avgrq-sz :** Taille moyenne des requêtes (en octets).
+- **avgqu-sz :** Taille moyenne de la file d'attente des requêtes.
+- **await :** Temps moyen d'attente pour chaque requête (en millisecondes).
+- **svctm :** Temps moyen de service pour les requêtes (en millisecondes).
+- **%util :** Pourcentage de temps pendant lequel le périphérique était occupé à traiter des requêtes.
+Exemple de commande de base :
+  #### - installation de package :
+![image](https://github.com/user-attachments/assets/5a6cb14a-dcce-48b2-85b0-2ee0041f0124)
+![image](https://github.com/user-attachments/assets/b469e700-ef65-44b9-93e4-30bbbf21c896)
+![image](https://github.com/user-attachments/assets/f0ba26f8-197c-4450-8fe5-010ae0f474c0)
+L'image que vous avez fournie montre la sortie de la commande iostat sous Linux. iostat (Input/Output statistics) est un utilitaire qui affiche les statistiques d'entrée/sortie du système, notamment l'utilisation du CPU et l'activité des périphériques de stockage (disques).
+
+### Voici une explication détaillée de la sortie :
+
+- **Première ligne :** Informations sur le noyau Linux, le nom d'hôte (standby), la date et l'architecture du système (x86_64) et le nombre de CPU (1 CPU).
+
+- **avg-cpu:** : Statistiques d'utilisation moyenne du CPU depuis le dernier redémarrage.
+
+- **%user (7.49) :** Pourcentage du temps CPU passé à exécuter des processus en espace utilisateur (applications).
+- **%nice (0.51) :** Pourcentage du temps CPU passé à exécuter des processus en espace utilisateur avec une priorité "nice" (plus basse).
+- **%system (4.00) :** Pourcentage du temps CPU passé à exécuter le noyau du système d'exploitation (tâches système).
+- **%iowait (0.55) :** Pourcentage du temps CPU pendant lequel le processeur était inactif en attendant des opérations d'entrée/sortie (E/S), typiquement des accès disque. Une valeur élevée peut indiquer des goulots d'étranglement au niveau du disque.
+- **%steal (0.00) :** Pourcentage du temps CPU "volé" par d'autres machines virtuelles dans un environnement virtualisé. Zéro ici signifie que la machine n'est pas virtualisée ou qu'elle n'a pas de ressources CPU volées.
+- **%idle (87.44) :** Pourcentage du temps CPU pendant lequel le processeur était inactif.
+Tableau des statistiques des périphériques : Ce tableau affiche les statistiques d'E/S pour chaque périphérique de stockage.
+
+### Device : Nom du périphérique.
+
+- **sda :** Généralement le premier disque dur SATA.
+- **scd0 :** Lecteur de CD/DVD.
+- **dm-0 et dm-1 : **Périphériques logiques gérés par le gestionnaire de périphériques (LVM) ou d'autres systèmes de gestion de volumes. Ils représentent des partitions ou des volumes logiques.
+- **tps (Transactions Per Second) :** Nombre de transferts (lectures et écritures) par seconde vers le périphérique. C'est une mesure de l'activité du disque.
+
+- **KB read/s :** Nombre de kilo-octets lus par seconde depuis le périphérique.
+
+- **KB wrtn/s :** Nombre de kilo-octets écrits par seconde vers le périphérique.
+
+- **KB read :** Nombre total de kilo-octets lus depuis le démarrage du système.
+
+- **KB wrtn :** Nombre total de kilo-octets écrits depuis le démarrage du système.
+
+### Analyse de cette sortie :
+
+- L'utilisation du CPU est relativement faible, avec un %idle de 87.44 %.
+- L'activité principale du disque semble concerner sda et dm-0, avec des valeurs significatives pour tps, KB read/s et KB wrtn/s. dm-1 montre une activité beaucoup plus faible. scd0 n'a pratiquement aucune activité.
+- Le %iowait est bas (0.55 %), ce qui indique que le CPU n'attend pas excessivement les opérations d'E/S. Cela suggère que les performances du disque ne sont pas un goulot d'étranglement majeur dans cette situation.
+- En résumé : iostat fournit une vue détaillée de l'activité d'E/S du système. Dans cette sortie, on observe une utilisation modérée du CPU et une activité significative sur les disques sda et dm-0, sans signe de saturation des E/S.
+
+**Pour obtenir une analyse plus approfondie, il serait utile de voir les statistiques sur une période plus longue ou pendant une charge de travail spécifique. Vous pouvez exécuter iostat -x 1 pour afficher des statistiques détaillées toutes les secondes.**
+
+
 
 
 
