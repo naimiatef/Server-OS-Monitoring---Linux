@@ -25,8 +25,17 @@ Cette image montre l'affichage de la commande top dans un terminal Linux, qui se
 - **%Cpu(s):** Indique la répartition de l'utilisation du CPU :
 - **6.2 us :** Temps passé par les processus utilisateur (user).
 - **6.2 sy :** Temps passé par les processus système (kernel).
-- **87.5 id : **Temps d'inactivité (idle).
+- **87.5 id :** Temps d'inactivité (idle).
 Les autres valeurs concernent des tâches spécifiques comme l'attente d'entrée/sortie (wa), ou les interruptions matérielles (hi) et logicielles (si).
-
+### Informations sur la mémoire :
+- **MiB Mem :** Utilisation de la mémoire vive (RAM).
+- **3654.1 total :** Capacité totale de la RAM.
+- **150.3 free :** Mémoire disponible.
+- **1439.8 used :** Mémoire utilisée par les processus.
+- **2063.9 buff/cache :** Mémoire utilisée pour les buffers et le cache.
+- **MiB Swap :** Utilisation de la mémoire swap (mémoire virtuelle sur disque).
+- **4056.0 total :** Taille totale du swap.
+- **4008.5 free :** Swap disponible.
+- **47.5 used :** Swap actuellement utilisé.
 
 
