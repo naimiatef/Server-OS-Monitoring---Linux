@@ -37,5 +37,22 @@ Les autres valeurs concernent des tâches spécifiques comme l'attente d'entrée
 - **4056.0 total :** Taille totale du swap.
 - **4008.5 free :** Swap disponible.
 - **47.5 used :** Swap actuellement utilisé.
+### Tableau des processus :
+Chaque ligne correspond à un processus en cours d'exécution ou en veille. Les colonnes affichent les informations suivantes :
+
+- **PID :** Identifiant unique du processus.
+- **USER :** Nom de l'utilisateur exécutant le processus.
+- **PR et NI :** Priorité et valeur nice du processus (impacte la priorité d'exécution).
+- **VIRT :** Mémoire virtuelle totale utilisée par le processus.
+- **RES :** Mémoire physique (RAM) utilisée.
+- **SHR :** Mémoire partagée par d'autres processus.
+- **S :** État du processus :<br>
+  - **R :** En cours d'exécution (Running).<br>
+  - **S :** En sommeil (Sleeping).<br>
+  - **I :** En veille inactif (Idle).<br>
+- **%CPU :** Pourcentage d'utilisation du CPU par le processus.
+- **%MEM :** Pourcentage d'utilisation de la RAM.
+- **TIME+ :** Temps total CPU consommé par le processus.
+- **COMMAND :** Nom ou commande associée au processus.
 
 
