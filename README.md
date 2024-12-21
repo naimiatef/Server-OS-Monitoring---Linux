@@ -1,6 +1,19 @@
 # Dans ce tutoriel, nous allons explorer et pratiquer des commandes Unix avancées pour surveiller une machine Unix.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Dans cet article, nous allons explorer des commandes UNIX avancées pour surveiller et analyser les performances du système. Voici les commandes que nous aborderons :** <br>
+
+**- top :** pour afficher les processus en cours d’exécution.
+**- top -o +%CPU :** pour trier les processus par utilisation du CPU.
+**- top -o +%MEM :** pour trier les processus par utilisation de la mémoire.
+**- vmstat -a :** pour afficher des statistiques détaillées sur la mémoire et les processus.
+**- vmstat -s :** pour afficher un résumé des statistiques système.
+**- iostat :** pour surveiller les performances des disques et des périphériques d’E/S.
+**- iotop :** pour identifier les processus consommant le plus de ressources d’E/S. <br>
+  Ces outils permettent une meilleure compréhension et un suivi précis des ressources système sous UNIX.
 ### N'hésitez pas à nous contacter en cas de doute: naimiatef@gmail.com
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # La commande **top** 
 La commande **top** sous Unix est un outil interactif qui permet de surveiller en temps réel les processus en cours d'exécution sur une machine. Elle affiche des informations clés telles que :
 
