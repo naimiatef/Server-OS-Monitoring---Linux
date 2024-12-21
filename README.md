@@ -8,3 +8,5 @@ La commande **top** sous Unix est un outil interactif qui permet de surveiller e
 - Les tâches actives, dormantes ou en attente.
 - Les utilisateurs et la priorité des processus.
 - C'est un outil essentiel pour analyser les performances et identifier les processus qui consomment le plus de ressources.
+![image](https://github.com/user-attachments/assets/72c4d053-6fad-46ac-984f-2bbef7ab3267)
+
